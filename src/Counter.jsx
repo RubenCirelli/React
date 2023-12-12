@@ -1,17 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export function Counter(){
-    const [counter, setCounter] = useState(0)
-    //usestate fa parte di un componente di react di conseguenza il
-    //funzionamento di counter è svolto in modo diverso, per questo ci serve
-    //setCounter come funzione, oltre ad essere dichiarata come const,
-    //ci serve perchè l'incremento di counter non sarebbe stato immediato con
-    //il classico counter +=1
+export function Counter({initialValue =0}){
+    const [counter, setCounter] = useState(initialValue)
     
     
     function handleCounterIncrement(){
-        setCounter(counter +1 )
-    }
+        setCounter((c) => c+1)
+        }
+        useEffect(() => {
+        console.log(`counter increased by ${counter}`  );
+        }, [{counter}])
+        
+    
     
     return (
         <div>
