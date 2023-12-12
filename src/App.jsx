@@ -4,7 +4,7 @@ export function App(){
     return(
         <>
         {/* <Hello /> lasciando il props non compilato l'output rimane invariato, lasciando solo Hello! */}
-        <Hello name="Ruben" age={22}/>
+        <Hello name="John" age={22}/>
         </>
     )
 }
