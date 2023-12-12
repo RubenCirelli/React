@@ -1,10 +1,15 @@
-import { Hello } from "./Welcome"
+import { Button } from "./Button"
 
-export function App(){
+export function AlertClock(){
+    function handleShowTIme(){
+       const now = new Date() 
+       alert(`The current time is ${now.toLocaleTimeString()}`)
+    }
+    
     return(
         <>
-        {/* <Hello /> lasciando il props non compilato l'output rimane invariato, lasciando solo Hello! */}
-        <Hello name="John" age={66}/>
+        <p>Click the button below to show the current time</p>
+        <Button onClick={handleShowTIme} label="Click me!"/>
         </>
     )
 }
