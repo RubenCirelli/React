@@ -1,8 +1,8 @@
-export function Hello({name, age}){
+export function Hello({name}){
     return (
             <>
             <p>Hello. <strong>{name}</strong>!</p>
-            <p>You are {age} years old</p>
+            <Age age={22}/>
             </>
     )
 }
