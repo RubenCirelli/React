@@ -1,11 +1,10 @@
-import {Hello} from "./Hello"
-import { Message } from "./Message"
+import { Hello } from "./Welcome"
 
 export function App(){
     return(
         <>
-        <Message/>
-        <Hello/>
+        {/* <Hello /> lasciando il props non compilato l'output rimane invariato, lasciando solo Hello! */}
+        <Hello name="Ruben"/>
         </>
     )
 }
