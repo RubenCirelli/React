@@ -1,24 +1,28 @@
-import { useState } from "react"
+import { useState } from "react";
+import { Button1,Button2,Button3, CounterDisplay } from "./CounterDisplay";
 
-export function Counter(){
-    const [counter, setCounter] = useState(0)
-    //usestate fa parte di un componente di react di conseguenza il
-    //funzionamento di counter è svolto in modo diverso, per questo ci serve
-    //setCounter come funzione, oltre ad essere dichiarata come const,
-    //ci serve perchè l'incremento di counter non sarebbe stato immediato con
-    //il classico counter +=1
-    
-    
-    function handleCounterIncrement(){
-        setCounter(counter +1 )
+
+export function InitialValue() {
+    const [Counter,setCounter]= useState(0)
+   function IncreaseButton(){
+      setCounter((c)=>{
+      return c + 1
+      })
     }
-    
-    return (
-        <div>
-            <h2>I have counted to {counter} </h2>
-            <button onClick={handleCounterIncrement}>Increment</button>
-
-        </div>
-    )
-    
+    function DecreaseButton(){
+        setCounter((c)=>{
+        return c - 1
+        })
+    }
+    function ResetButton(){
+        setCounter((c)=>{
+        return 0
+        })
+    }
+ return <div>
+       <CounterDisplay Counter={Counter} />
+      <Button1 onClick={IncreaseButton} label="Increase" /> 
+      <Button2 onClick={DecreaseButton} label="Decrease" /> 
+      <Button3 onClick={ResetButton} label="Reset" /> 
+  </div>
 }
