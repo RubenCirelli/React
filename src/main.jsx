@@ -1,4 +1,4 @@
 import {createRoot} from 'react-dom/client'
-import { Clock} from "./Clock";
+import {MouseClick} from "./MouseClicker";
 
-createRoot(document.getElementById("root")).render(<Clock/> )
+createRoot(document.getElementById("root")).render(<MouseClick/> )
