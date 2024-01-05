@@ -1,4 +1,5 @@
-import {createRoot} from 'react-dom/client'
-import {MouseClick} from "./MouseClicker";
+import {createRoot} from "react-dom/client"
 
-createRoot(document.getElementById("root")).render(<MouseClick/> )
+createRoot(document.getElementById('root')).render(<App />)
+
+import { App } from "./app";
