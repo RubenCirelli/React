@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AlertClock } from "./AlertClock";
 import { Color } from "./Color";
 import { Colors } from "./Colors";
@@ -8,16 +9,19 @@ import { ToDoList } from "./ListsAndState";
 import { ToDo } from "./ToDo";
 import { ToDo2 } from "./ToDoProva";
 import { Welcome } from "./Welcome";
-
+import { LanguageContext } from "./assets/LanguageContext";
+import { FetchData } from "./GitHubUser";
 
 export function App() {
-  return (
-    <Container title = {<h1>Questa è una prova</h1>}>
-      <Welcome name="Ruben" eta={22} />
-      <AlertClock/>
-      <br />
-      <ToDo2 />
 
-    </Container>
+  const [language, setLanguage] = useState('en')
+  function handleLanguage(language) {
+    setLanguage(language)
+  }
+
+  return (
+
+    <FetchData username="RubenCirelli" />
+
   )
 } 
