@@ -14,6 +14,7 @@ import { FetchData } from "./GitHubUser";
 import { GetUsers } from "./GitHubUsers";
 import { HookCounter } from "./useCounter";
 import { InputFunction } from "./useInput";
+import { Location } from "./useCurrentLocation";
 
 export function App() {
 
