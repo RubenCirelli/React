@@ -1,4 +1,5 @@
 import { useState } from "react"
+import classes from "./ToDoProva.module.css"
 
 
 export function ToDo2() {
@@ -19,12 +20,12 @@ export function ToDo2() {
     function handleRemove(index) {
         let newArr = todos
         newArr.splice(index, 1)
-        setTodos(newArr)
+        setTodos([...newArr])
     }
 
     return (
         <form onSubmit={handlePush}>
-            <div>
+            <div className={classes.todo}>
                 <button name="OnClick" type="submit" >Click me</button>
                 <button name="Reset" onClick={handleReset}>Reset</button>
                 <input name="todo" onChange={() => { }} />
