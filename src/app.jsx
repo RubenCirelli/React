@@ -4,12 +4,14 @@ import { Counter } from "./Counter";
 import { FocusableInput } from "./FocusableInput";
 import { ToDoList } from "./ListsAndState";
 import { ToDo } from "./ToDo";
+import { ToDo2 } from "./ToDoProva";
+
 
 export function App() {
   return (
     <div>
-      <ToDo />
-      {/* <ToDoList todos={["", "", "", "", "",""]}/> */}
+      <ToDo2 />
+
     </div>
   )
 } 
