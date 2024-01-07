@@ -1,10 +1,9 @@
-import { InteractiveWelcome} from "./InteractiveWelcome";
-import { Login } from "./login";
+import { FocusableInput } from "./FocusableInput";
 
 export function App(){
   return(
     <div>
-      <Login />
+      <FocusableInput/>
     </div>
   )
-}
+} 
