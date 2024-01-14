@@ -1,10 +1,14 @@
 import { Hello } from "./Welcome"
-
-export function App(){
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+const App =() => {
     return(
         <>
-        {/* <Hello /> lasciando il props non compilato l'output rimane invariato, lasciando solo Hello! */}
-        <Hello name="Ruben"/>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Hello name="Ruben" />}></Route>
+            </Routes>
+        </Router>
         </>
     )
 }
+export default App
