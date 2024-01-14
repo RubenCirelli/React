@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {  Link, Routes, Route, BrowserRouter } from 'react-router-dom';
 import  FetchData  from "./GitHubUser";
 import { Hello } from './Welcome';
 import { Counter } from "./Counter"
@@ -7,13 +7,17 @@ import { Counter } from "./Counter"
 const App =() => {
     return(
         <>
-        <Router>
+        <BrowserRouter>
             <Routes>
                 <Route path="users/:username" element= {<FetchData username="RubenCirelli" />}></Route>
                 <Route path="/Counter" element= {<Counter />}></Route>
                 <Route path="/" element= {<Hello name="Ruben" />}></Route>
+                <Route path="*"  element=
+                {<div>  <p>Not found</p>
+                    <Link to="/"> Go Homepage</Link>
+                </div>} />
             </Routes>
-        </Router>
+        </BrowserRouter>
         </>
     )
 }
