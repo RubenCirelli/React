@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet,Routes,Route } from "react-router-dom"
 
 
 const GettingData = () => {
@@ -23,6 +23,9 @@ const GettingData = () => {
                     <Link to={el.login}>{el.login}</Link>
                 </li>
             ))}
+            
+                <Link to=""><h2>Add an User and Select it</h2> </Link>
+            
         </ul>
         <Outlet />
     </div>
