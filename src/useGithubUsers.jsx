@@ -11,5 +11,6 @@ export const useGithubUser = (username) => {
         userData: data,
         error,
         isLoading: !data && !error,
+        onRefresh: () => mutate (),
     };
 }
