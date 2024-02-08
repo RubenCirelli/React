@@ -1,26 +1,24 @@
-import { useState } from "react";
-import { AlertClock } from "./AlertClock";
-import { Color } from "./Color";
-import { Colors } from "./Colors";
-import { Container } from "./Container";
-import { Counter } from "./Counter";
-import { FocusableInput } from "./FocusableInput";
-import { ToDoList } from "./ListsAndState";
-import { ToDo } from "./ToDo";
-import { ToDo2 } from "./ToDoProva";
+import { Link, Route, Routes } from "react-router-dom";
 import { Welcome } from "./Welcome";
-import { LanguageContext } from "./assets/LanguageContext";
-import { FetchData } from "./GitHubUser";
-import { GetUsers } from "./GitHubUsers";
-import { HookCounter } from "./useCounter";
-import { InputFunction } from "./useInput";
+import { Counter } from "./Counter";
+import { ShowGithubUser } from "./ShowGithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 export function App() {
-
-  return (
-    <div>
-<FetchData username="RubenCirelli"/>
-    </div>
-
-  )
-} 
+    return (
+        <>
+            <Link to="/">Welcome </Link>|
+            <Link to="/counter"> Counter </Link> | 
+            <Link to="/users"> SwohGitHubUser </Link>
+            <Routes>  
+                <Route path="/" element={<Welcome name="John"/>} />
+                <Route path="/counter" element={<Counter />} />
+                <Route path="/users" element={<GithubUserList />} >
+                    <Route index element={<p>Add a user and select it</p> } />
+                    <Route path=":username" element={<ShowGithubUser />}/>
+                </Route>
+                <Route path="*" element={<p>Not found</p>} />
+            </Routes>
+        </>
+    );
+}

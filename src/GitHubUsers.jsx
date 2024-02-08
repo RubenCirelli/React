@@ -29,5 +29,4 @@ export function GetUsers() {
             <button type="submit">Show username</button>
             {data && <ul>{data.map((el, index) => <li key={index}>{el.name}</li>)}</ul>}
         </form>
-    )
-}
+    )}
